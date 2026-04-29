@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="container-fluid">
-                <a href="" class="btn btn-info">Add New Student</a>
+                <a href="{{ route('student.create') }}" class="btn btn-info">Add New Student</a>
                 <div class="row"></div>
 
                 <div class="card-footer">
