@@ -27,12 +27,12 @@
 
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>First Name</th>
-                                <th>Last Name</th>
                                 <th>Middle Name</th>
+                                <th>Last Name</th>
                                 <th>Address</th>
                                 <th>Date of Birth</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
 
@@ -40,14 +40,21 @@
                             @foreach ($students as $student)
                             <tr>
                                 
-                                <td>{{ $student->id }}</td>
                                 <td>{{ $student->fname }}</td>
-                                <td>{{ $student->lname }}</td>
                                 <td>{{ $student->mname }}</td>
+                                <td>{{ $student->lname }}</td>
                                 <td>{{ $student->add }}</td>
                                 <td>{{ $student->dob }}</td>
                                 <td>
-                                    
+                                    <a href="{{ route('student.edit', $student->id) }}" class="btn btn-success btn-sm">Edit</a>
+
+                                    <form action="{{ route('student.destroy', $student->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete this student?')">
+                                            Delete
+                                        </button>
+                                    </form>
                                 </td>
                                 
                             </tr>

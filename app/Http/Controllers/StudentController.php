@@ -22,8 +22,8 @@ class StudentController extends Controller
     {
         $validated = $request->validate([
             'fname' => ['required', 'string', 'max:255'],
-            'lname' => ['required', 'string', 'max:255'],
             'mname' => ['required', 'string', 'max:255'],
+            'lname' => ['required', 'string', 'max:255'],
             'add' => ['required', 'string', 'max:255'],
             'dob' => ['required', 'string', 'max:20'],
         ]);
@@ -45,8 +45,8 @@ class StudentController extends Controller
     {
         $validated = $request->validate([
             'fname' => ['required', 'string', 'max:255'],
-            'lname' => ['required', 'string', 'max:255'],
             'mname' => ['required', 'string', 'max:255'],
+            'lname' => ['required', 'string', 'max:255'],
             'add' => ['required', 'string', 'max:255'],
             'dob' => ['required', 'string', 'max:20'],
         ]);
